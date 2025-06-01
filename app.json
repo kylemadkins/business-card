@@ -1,5 +1,6 @@
 {
   "expo": {
+    "scheme": "business-card",
     "name": "business-card",
     "slug": "business-card",
     "version": "1.0.0",
@@ -27,6 +28,19 @@
     },
     "plugins": [
       "expo-router"
-    ]
+    ],
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "55af1a59-c3e5-4043-825a-37c4bc258dc5"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/55af1a59-c3e5-4043-825a-37c4bc258dc5"
+    },
+    "owner": "kylemadkins"
   }
 }
