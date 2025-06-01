@@ -1,20 +1,19 @@
-import { Link } from "expo-router";
-import { StyleSheet, View, Text, Image } from "react-native";
+import { StyleSheet, View, Text, Image, Pressable } from "react-native";
+import * as WebBrowser from "expo-web-browser";
 
 export function Project({ image, title, description, url }) {
+  const handleOpenUrl = async () => {
+    await WebBrowser.openBrowserAsync(url);
+  };
+
   return (
-    <Link
-      href={{
-        pathname: "/in-app-browser",
-        params: { url },
-      }}
-    >
+    <Pressable onPress={handleOpenUrl}>
       <View style={styles.project}>
         <Image source={image} style={styles.image} />
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.description}>{description}</Text>
       </View>
-    </Link>
+    </Pressable>
   );
 }
 
