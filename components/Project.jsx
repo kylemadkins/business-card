@@ -1,12 +1,25 @@
-import { StyleSheet, View, Text, Image } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Text,
+  Image,
+  Pressable,
+  Linking,
+} from "react-native";
 
-export function Project({ image, title, description }) {
+export function Project({ image, title, description, url }) {
+  const handlePressProject = () => {
+    Linking.openURL(url);
+  };
+
   return (
-    <View style={styles.project}>
-      <Image source={image} style={styles.image} />
-      <Text style={styles.title}>{title}</Text>
-      <Text style={styles.description}>{description}</Text>
-    </View>
+    <Pressable onPress={handlePressProject}>
+      <View style={styles.project}>
+        <Image source={image} style={styles.image} />
+        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.description}>{description}</Text>
+      </View>
+    </Pressable>
   );
 }
 

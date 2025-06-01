@@ -101,11 +101,13 @@ export default function App() {
                 image={require("./assets/squirtle.jpg")}
                 title="3D Renderer"
                 description="A 3D software renderer in C"
+                url="https://github.com/kylemadkins/cgfx"
               />
               <Project
                 image={require("./assets/asteroids.png")}
                 title="Asteroids"
                 description="A classic arcade game in Python"
+                url="https://github.com/kylemadkins/asteroids"
               />
             </ScrollView>
             <StatusBar style="light" />
