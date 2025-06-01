@@ -11,7 +11,8 @@ import {
 } from "react-native";
 import { FontAwesome6 } from "@expo/vector-icons";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
-import { Project } from "./components/Project";
+import { Project } from "../components/Project";
+import { Stack } from "expo-router";
 
 const { width } = Dimensions.get("window");
 
@@ -29,15 +30,16 @@ export default function App() {
 
   return (
     <SafeAreaProvider>
-      <SafeAreaView edges={["bottom"]}>
+      <Stack.Screen options={{ headerShown: false, title: "Home" }} />
+      <SafeAreaView edges={["bottom"]} style={{ backgroundColor: "#fff" }}>
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.container}>
             <Image
-              source={require("./assets/projection.jpg")}
+              source={require("../assets/projection.jpg")}
               style={{ width: "100%", height: 200 }}
             />
             <Image
-              source={require("./assets/profile.png")}
+              source={require("../assets/profile.png")}
               style={{
                 width: width / 2,
                 height: width / 2,
@@ -98,13 +100,13 @@ export default function App() {
               style={{ width }}
             >
               <Project
-                image={require("./assets/squirtle.jpg")}
+                image={require("../assets/squirtle.jpg")}
                 title="3D Renderer"
                 description="A 3D software renderer in C"
                 url="https://github.com/kylemadkins/cgfx"
               />
               <Project
-                image={require("./assets/asteroids.png")}
+                image={require("../assets/asteroids.png")}
                 title="Asteroids"
                 description="A classic arcade game in Python"
                 url="https://github.com/kylemadkins/asteroids"

@@ -1,25 +1,20 @@
-import {
-  StyleSheet,
-  View,
-  Text,
-  Image,
-  Pressable,
-  Linking,
-} from "react-native";
+import { Link } from "expo-router";
+import { StyleSheet, View, Text, Image } from "react-native";
 
 export function Project({ image, title, description, url }) {
-  const handlePressProject = () => {
-    Linking.openURL(url);
-  };
-
   return (
-    <Pressable onPress={handlePressProject}>
+    <Link
+      href={{
+        pathname: "/in-app-browser",
+        params: { url },
+      }}
+    >
       <View style={styles.project}>
         <Image source={image} style={styles.image} />
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.description}>{description}</Text>
       </View>
-    </Pressable>
+    </Link>
   );
 }
 
